@@ -9,9 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vorms/core": "1.2.0-beta.5",
+    "@vorms/resolvers": "1.2.0-beta.5",
     "@vuepic/vue-datepicker": "^9.0.2",
     "floating-vue": "^5.2.2",
-    "vue": "^3.4.37"
+    "valibot": "^0.41.0",
+    "vue": "^3.4.37",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/node": "^22.5.1",
@@ -22,6 +26,7 @@
     "tailwindcss": "^3.4.10",
     "typescript": "^5.5.3",
     "vite": "^5.4.1",
+    "vite-imagetools": "^7.0.4",
     "vue-tsc": "^2.0.29"
   }
 }
