@@ -58,7 +58,9 @@ const { fields, append, remove } = useFieldArray<{ name: string; age: number }>(
       </div>
 
       <ul class="flex flex-col gap-4">
-        <li v-for="field in fields" :key="field.key" class="flex flex-col border p-4">
+        <li v-for="(field, index) in fields" :key="field.key" class="flex flex-col border p-4">
+          <p>{{ field.key }} {{ index }}</p>
+          <button type="button" class="border border-green-400" @click="remove(index)">remove</button>
           <input class="border" v-bind="field.attrs" type="text" v-model="field.value.name" />
           <input
             class="border"
