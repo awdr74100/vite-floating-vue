@@ -17,7 +17,7 @@ const schema = v.object({
 
 type Schema = InferOutput<typeof schema>
 
-const { handleSubmit } = useForm({
+const { handleSubmit, setFieldValue } = useForm<{ colors?:string[] }>({
   reValidateMode: 'change',
   validate: valibotResolver(schema),
   initialValues: {
@@ -93,6 +93,7 @@ const { value, attrs, error } = useField<string[]>('colors')
         <input id="purple" type="checkbox" value="purple" v-model="value" v-bind="attrs" />
       </div>
       <button type="submit" class="border border-gray-500">SUBMIT</button>
+      <button type="button" class="border" @click="setFieldValue('colors', undefined, true)">Set</button>
     </form>
     <!-- <form @submit="handleSubmit">
       <div class="flex flex-col gap-y-4">
