@@ -8,9 +8,14 @@ import { valibotResolver } from '@vorms/resolvers/valibot';
 import * as v from 'valibot';
 import AtomicCheckbox from '@/components/atomics/AtomicCheckbox.vue';
 
+import type {InferOutput} from 'valibot'
+
 const schema = v.object({
+  // colors: v.pipe(v.array(v.union([v.string(), v.number()])), v.minLength(1)),
   colors: v.pipe(v.array(v.string()), v.minLength(1)),
 });
+
+type Schema = InferOutput<typeof schema>
 
 const { handleSubmit } = useForm({
   reValidateMode: 'change',
